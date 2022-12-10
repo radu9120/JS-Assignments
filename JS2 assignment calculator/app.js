@@ -124,6 +124,7 @@ operationButtons.forEach((button) => {
 });
 
 equalsButton.addEventListener("click", (button) => {
+  //add an EventListener to the Equals button. The EventListener will invoke the compute function and return the results.
   calculator.compute();
   calculator.updateDisplay();
 });
