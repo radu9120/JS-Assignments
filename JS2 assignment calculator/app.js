@@ -1,11 +1,13 @@
 class Calculator {
+  //We determine where to place the display text for the calculator.
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement;
     this.currentOperandTextElement = currentOperandTextElement;
-    this.clear();
+    this.clear(); //will clear all the different variables,reset the inputs.
   }
 
   clear() {
+    //The clear() function will delete all the displayed values.
     this.currentOperand = "";
     this.previousOperand = "";
     this.operation = undefined;
@@ -17,7 +19,7 @@ class Calculator {
 
   appendNumber(number) {
     if (number === "." && this.currentOperand.includes(".")) return;
-    this.currentOperand = this.currentOperand.toString() + number.toString();
+    this.currentOperand = this.currentOperand.toString() + number.toString(); // convert it to a string if it’s a number
   }
 
   chooseOperation(operation) {
@@ -31,8 +33,9 @@ class Calculator {
   }
 
   compute() {
+    //converting this string to a number, and i will do the same thing with the current operand.
     let computation;
-    const prev = parseFloat(this.previousOperand);
+    const prev = parseFloat(this.previousOperand); //use a switch statement to determine or change the computation operation.
     const current = parseFloat(this.currentOperand);
     if (isNaN(prev) || isNaN(current)) return;
     switch (this.operation) {
@@ -88,7 +91,7 @@ class Calculator {
     }
   }
 }
-
+// Select ALL because these buttons appear several times on the calculator.
 const numberButtons = document.querySelectorAll("[data-number]");
 const operationButtons = document.querySelectorAll("[data-operation]");
 const equalsButton = document.querySelector("[data-equals]");
