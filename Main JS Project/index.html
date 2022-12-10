@@ -2,11 +2,52 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissor</title>
   </head>
   <body>
-    <script src="./index.js"></script>
+    <div class="total-scoring">
+      <div class="payer-score">
+        <h1>Player</h1>
+        <p class="player-count">0</p>
+      </div>
+
+      <div class="computer-score">
+        <h1>Computer</h1>
+        <p class="computer-count">0</p>
+      </div>
+    </div>
+
+    <div class="page-container">
+      <div class="choose">Choose Your Move</div>
+      <div class="movesleft"></div>
+      <div class="computer-inputs-container">
+        <i
+          class="fa-regular fa-hand-back-fist computer-pick"
+          id="computer-rock"
+        ></i>
+        <i class="fa-regular fa-hand computer-pick" id="computer-paper"></i>
+        <i
+          class="fa-regular fa-hand-scissors computer-pick"
+          id="computer-scissors"
+        ></i>
+      </div>
+      <div class="user-inputs-container">
+        <i class="fa-regular fa-hand-back-fist" id="rock"></i>
+        <i class="fa-regular fa-hand" id="paper"></i>
+        <i class="fa-regular fa-hand-scissors" id="scissors"></i>
+      </div>
+    </div>
+    <div class="round-result"></div>
+    <div class="play-again">
+      <button id="reset-round"><h1>Play Again</h1></button>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/7a9a7570a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
   </body>
 </html>
