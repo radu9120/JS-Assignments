@@ -1,7 +1,7 @@
 class Calculator {
-  //We determine where to place the display text for the calculator.
+  // Main constructor of the calculator. The purpose of a constructor is to create a new object and set values for any existing object properties.
   constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement;
+    this.previousOperandTextElement = previousOperandTextElement; //The this keyword begins to refer to the new object and it becomes the current instance object.
     this.currentOperandTextElement = currentOperandTextElement;
     this.clear(); //will clear all the different variables,reset the inputs.
   }
@@ -18,7 +18,7 @@ class Calculator {
   }
 
   appendNumber(number) {
-    if (number === "." && this.currentOperand.includes(".")) return;
+    if (number === "." && this.currentOperand.includes(".")) return; //This will stop the function from executing any further
     this.currentOperand = this.currentOperand.toString() + number.toString(); // convert it to a string if it’s a number
   }
 
@@ -80,7 +80,7 @@ class Calculator {
 
   updateDisplay() {
     this.currentOperandTextElement.innerText = this.getDisplayNumber(
-      this.currentOperand
+      this.currentOperand //eliminate unnecessary decimal points by setting the maximum fraction digits to zero.
     );
     if (this.operation != null) {
       this.previousOperandTextElement.innerText = `${this.getDisplayNumber(
@@ -134,6 +134,7 @@ allClearButton.addEventListener("click", (button) => {
 });
 
 deleteButton.addEventListener("click", (button) => {
+  //we delete them one by one using the Delete button.
   calculator.delete();
   calculator.updateDisplay();
 });
