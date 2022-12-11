@@ -53,6 +53,7 @@ const initGame = () => {
       const roundWinner = getRoundWinner(playerChoice);
       updateScore(roundWinner);
       displayRoundWinner(roundWinner);
+      displayMovesleft(roundWinner);
     });
   });
 };
@@ -100,6 +101,16 @@ function updateScore(roundWinner) {
 function displayRoundWinner(roundWinner) {
   resultElement.innerHTML =
     roundWinner === "tie" ? "It's a tie" : `${roundWinner} won this round!`;
+}
+
+function displayMovesleft(updateScore) {
+  // movesLeft.innerHTML;
+  if (moves > 10) {
+    movesLeft.innerHTML = `Game Over ${updateScore} Won`;
+  } else {
+    ("continue palying ");
+  }
+  // moves >= 10 ? `Game Over ${roundWinner} won` :` moves === 0 Reset Game`;
 }
 
 function resetRound() {
