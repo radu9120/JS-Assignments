@@ -5,8 +5,9 @@ const paperIcon = document.getElementById("paper");
 const scissorIcon = document.getElementById("scissors");
 const playerChoicesElements = [rockIcon, paperIcon, scissorIcon];
 const movesLeft = document.querySelector(".movesleft");
-const resetRoundButton = document.getElementById("reset-round");
+const resetRoundButton = document.querySelector(".reset-round");
 const resultElement = document.querySelector(".round-result");
+const resetTotalGame = document.querySelector(".reset-game");
 
 const score = {
   playerScore: 0,
@@ -33,6 +34,7 @@ const picks = {
 //Function to select the html elements
 const initGame = () => {
   resetRoundButton.addEventListener("click", resetRound);
+  resetTotalGame.addEventListener("click", resetAllbutton);
   movesLeft.innerText = `Moves Left: ${10 - moves}`;
 
   // Start fo the game Function
@@ -107,6 +109,7 @@ function displayMovesleft(updateScore) {
   // movesLeft.innerHTML;
   if (moves > 10) {
     movesLeft.innerHTML = `Game Over ${updateScore} Won`;
+    resetRoundButton.disabled = true;
   } else {
     ("continue palying ");
   }
@@ -124,6 +127,17 @@ function resetRound() {
   resultElement.innerHTML = "";
   isPlaying = true;
 }
+
+function resetAllbutton() {
+  document
+    .getElementById(playerChoice)
+    .classList.remove("player-choice-active");
+  document
+    .getElementById(`computer-${computerChoice}`)
+    .classList.remove("computer-choice-active");
+  isPlaying = true;
+}
+
 // previos code addapted only for terminal play!!!
 
 /*

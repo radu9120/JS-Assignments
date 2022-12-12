@@ -62,10 +62,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .play-again h1 {
   font-size: 2rem;
+}
+
+.reset-game h1 {
+  font-size: 2rem;
+  padding-top: 5px;
 }
 
 .play-again button {
